@@ -1,0 +1,141 @@
+# HeroAntiCheat - إعدادات أولية
+system:
+  enabled: true
+  log-level: INFO
+  save-logs: true
+  logs-file: plugins/HeroAntiCheat/logs.txt
+  consider-lag: true
+  minimum-tps: 10.0
+  max-ping-threshold: 300
+
+database:
+  type: sqlite
+  sqlite:
+    file: plugins/HeroAntiCheat/data.db
+
+punishments:
+  auto-punish: true
+  default-ban-type: TEMP
+  temp-ban-duration: 60
+  auto-ban-confidence: 95
+  notify-admins: true
+  log-violations: true
+  check-ban-on-join: true
+
+checks:
+  killaura:
+    enabled: true
+    confidence-threshold: 80
+    vl-max: 100
+  autoclicker:
+    enabled: true
+    confidence-threshold: 75
+    max-cps-threshold: 20
+    vl-max: 80
+  reach:
+    enabled: true
+    confidence-threshold: 85
+    max-reach: 3.5
+    vl-max: 100
+  fly:
+    enabled: true
+    confidence-threshold: 80
+    vl-max: 50
+  speed:
+    enabled: true
+    confidence-threshold: 75
+    max-speed-multiplier: 1.3
+    vl-max: 80
+  nofall:
+    enabled: true
+    confidence-threshold: 85
+    vl-max: 100
+  fastbreak:
+    enabled: true
+    confidence-threshold: 75
+    vl-max: 90
+  fastplace:
+    enabled: true
+    confidence-threshold: 70
+    vl-max: 90
+  scaffold:
+    enabled: true
+    confidence-threshold: 80
+    vl-max: 100
+  spider:
+    enabled: true
+    confidence-threshold: 85
+    vl-max: 100
+  jesus:
+    enabled: true
+    confidence-threshold: 90
+    vl-max: 100
+  velocity:
+    enabled: true
+    confidence-threshold: 75
+    vl-max: 80
+  antiknockback:
+    enabled: true
+    confidence-threshold: 85
+    vl-max: 100
+  timer:
+    enabled: true
+    confidence-threshold: 80
+    vl-max: 100
+  inventory:
+    enabled: true
+    confidence-threshold: 70
+    vl-max: 70
+  freecam:
+    enabled: true
+    confidence-threshold: 75
+    vl-max: 90
+    note: 'يرصد أنماطًا مشبوهة فقط ولا يضمن كشف كل أنواع Freecam'
+  xray:
+    enabled: true
+    confidence-threshold: 65
+    vl-max: 80
+    note: 'يرصد أنماط التعدين المشبوهة ولا يضمن كشف كل أنواع X-Ray'
+  fastxp:
+    enabled: true
+    confidence-threshold: 70
+    vl-max: 70
+  autototem:
+    enabled: true
+    confidence-threshold: 85
+    vl-max: 100
+  aimassist:
+    enabled: true
+    confidence-threshold: 80
+    vl-max: 90
+  autoarmor:
+    enabled: true
+    confidence-threshold: 75
+    vl-max: 90
+
+violation-levels:
+  low:
+    min-vl: 1
+    max-vl: 30
+    action: log
+  medium:
+    min-vl: 31
+    max-vl: 70
+    action: kick
+    message: 'تم طردك بسبب سلوك مشبوه: {violation}'
+  high:
+    min-vl: 71
+    max-vl: 90
+    action: ban-temp
+    duration: 60
+    message: 'تم حظرك مؤقتًا. السبب: {violation}'
+  critical:
+    min-vl: 91
+    max-vl: 100
+    action: review
+    message: 'تم إرسال المخالفة للمراجعة'
+
+exceptions:
+  bypass-permissions:
+    - heroanticheat.bypass
+    - heroanticheat.admin

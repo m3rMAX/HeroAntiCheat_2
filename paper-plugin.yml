@@ -1,0 +1,29 @@
+name: HeroAntiCheat
+version: '1.0.0'
+description: نظام مكافحة الهاكات - هيكل مشروع أولي
+main: net.heroclient.anticheat.HeroAntiCheat
+api-version: '1.21'
+folia-supported: true
+authors: [HeroClient Team]
+commands:
+  heroac:
+    description: الأمر الرئيسي لإدارة HeroAntiCheat
+    usage: /heroac [reload|alerts|info|violations|review|history|ban|unban|checks|check|debug]
+    aliases: [hac, anticheat]
+    permission: heroanticheat.admin
+permissions:
+  heroanticheat.admin:
+    description: إدارة البلوقن
+    default: op
+  heroanticheat.alerts:
+    description: عرض تنبيهات المخالفات
+    default: op
+  heroanticheat.bypass:
+    description: تجاوز فحوصات AntiCheat
+    default: false
+  heroanticheat.review:
+    description: مراجعة السجلات والمخالفات
+    default: op
+  heroanticheat.debug:
+    description: عرض معلومات التشخيص
+    default: op

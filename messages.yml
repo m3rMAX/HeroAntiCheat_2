@@ -1,0 +1,6 @@
+prefix: '<gray>[<aqua>HeroAntiCheat</aqua>]</gray> '
+no-permission: '<red>ليس لديك صلاحية لاستخدام هذا الأمر.</red>'
+player-not-found: '<red>اللاعب غير موجود.</red>'
+reload-success: '<green>تمت إعادة تحميل الإعدادات.</green>'
+alerts-enabled: '<green>تم تفعيل التنبيهات.</green>'
+alerts-disabled: '<yellow>تم إيقاف التنبيهات.</yellow>'
